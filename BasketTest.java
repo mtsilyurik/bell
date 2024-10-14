@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 public class BasketTest {
     @Test
     public void testAddProduct() {
-        Task_5 basket = new Task_5();
+        Basket basket = new Task_5();
 
         basket.addProduct("Milk", 1);
         assertEquals(basket.getProductQuantity("Milk"), 1);
@@ -63,11 +63,4 @@ public class BasketTest {
         assertTrue(basket.getProducts().isEmpty());
     }
 
-    public static void main(String[] args) {
-        BasketTest basket = new BasketTest();
-        basket.testAddProduct();
-        basket.testRemoveProduct();
-        basket.testUpdateProductQuantity();
-        basket.testClear();
-    }
 }
