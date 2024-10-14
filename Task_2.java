@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class Task_1 {
+public class Task_2 {
     public static void main(String[] args) {
 
         // Header
@@ -30,6 +30,7 @@ public class Task_1 {
 
 
         // Младше 30
+        System.out.println("Младше 30");
         table.stream()
                 .forEach(x -> {
                     if(Integer.parseInt(x.get("age")) < 30) System.out.println(x.get("name"));
@@ -37,6 +38,7 @@ public class Task_1 {
         System.out.println();
 
         // Все сотрудники, получающие зарплату в рублях
+        System.out.println("Все сотрудники, получающие зарплату в рублях");
         table.stream()
                 .forEach(x -> {
                     if(x.get("salary").endsWith("руб")) System.out.println(x.get("name"));
@@ -44,6 +46,7 @@ public class Task_1 {
         System.out.println();
 
         // Средний возраст
+        System.out.println("Средний возраст");
         AtomicReference<Double> avg = new AtomicReference<>(0.0);
         table.stream().forEach(x -> {
             int age = Integer.parseInt(x.get("age"));

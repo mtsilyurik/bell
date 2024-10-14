@@ -10,10 +10,7 @@ public class Task_3 {
         System.out.print("Width: ");
         int width = sc.nextInt();
 
-        System.out.print("Height: ");
-        int height = sc.nextInt();
-
-        int[][] matrix = initRandom(new int[width][height]);
+        int[][] matrix = initRandom(new int[width][width]);
 
         System.out.println(minDiag(matrix));
 
