@@ -25,7 +25,7 @@ public class Task_5 implements Basket{
     @Override
     public void updateProductQuantity(String product, int quantity) {
         if (products.containsKey(product)) {
-            products.put(product, quantity);
+            products.put(product, getProductQuantity(product) + quantity);
         }
     }
 
