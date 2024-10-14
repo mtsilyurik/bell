@@ -11,7 +11,7 @@ public class Task_5 implements Basket{
         if (!products.containsKey(product)) {
             products.put(product, quantity);
         } else {
-            products.compute(product, (k, currentQuantity) -> currentQuantity + quantity);
+            updateProductQuantity(product, quantity);
         }
     }
 
