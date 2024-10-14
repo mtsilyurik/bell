@@ -22,9 +22,9 @@ public class Task_4 {
                 String cell = "";
 
                 if(i==0) {
-                    cell = String.valueOf(width/2-1);
+                    cell = String.valueOf(v);
                 } else if(j <= i) {
-                    cell = String.valueOf((width/2-1) - j);
+                    cell = String.valueOf(v - j);
                 }
 
                 if(j <= i) {
