@@ -18,14 +18,14 @@ public class Task_5 implements Basket{
     @Override
     public void removeProduct(String product) {
         if (products.containsKey(product)) {
-            products.compute(product, (k, currentQuantity) -> Math.max(currentQuantity - 1, 0));
+            products.remove(product);
         }
     }
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
         if (products.containsKey(product)) {
-            products.compute(product, (k, currentQuantity) -> Math.min(quantity, currentQuantity + quantity));
+            products.put(product, quantity);
         }
     }
 
@@ -36,11 +36,18 @@ public class Task_5 implements Basket{
 
     @Override
     public List<String> getProducts() {
-        return new ArrayList<>(products.keySet());
+        ArrayList<String> res = new ArrayList<>(products.keySet());
+        res.trimToSize();
+        return res;
     }
 
     @Override
     public int getProductQuantity(String product) {
         return products.getOrDefault(product, 0);
+    }
+
+    @Override
+    public String toString() {
+        return "Basket " + this.hashCode() + " products: " + products.keySet();
     }
 }
