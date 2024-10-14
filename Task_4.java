@@ -10,8 +10,11 @@ public class Task_4 {
     }
 
     private static String[][] foo(int v) {
-
-        if(v < 0) return foo(0);
+        int k = 1;
+        if(v < 0) {
+            v = -v;
+            k = -k;
+        }
 
         int width = (v+1)*2;
         int height = (v+1)*2;
@@ -22,9 +25,9 @@ public class Task_4 {
                 String cell = "";
 
                 if(i==0) {
-                    cell = String.valueOf(v);
+                    cell = String.valueOf(v*k);
                 } else if(j <= i) {
-                    cell = String.valueOf(v - j);
+                    cell = String.valueOf((v - j)*k);
                 }
 
                 if(j <= i) {
