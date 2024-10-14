@@ -17,15 +17,15 @@ public class Task_5 implements Basket{
 
     @Override
     public void removeProduct(String product) {
-        if (products.containsKey(product)) {
-            products.remove(product);
-        }
+        products.remove(product);
     }
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
         if (products.containsKey(product)) {
             products.put(product, getProductQuantity(product) + quantity);
+        } else {
+            addProduct(product, quantity);
         }
     }
 
